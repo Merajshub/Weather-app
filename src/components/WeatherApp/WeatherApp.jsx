@@ -23,8 +23,6 @@ export const WeatherApp = ()=>{
 
 
  const search = async()=>{
-    // const element = document.getElementsByClassName("cityInput");
-    
 
     if(inputCity===""){
         return 0;
@@ -33,15 +31,7 @@ export const WeatherApp = ()=>{
 
     const response =  await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=Metric&appid=7b2e4b1677bea981941226f19085b930`);
 
-    // const humidity = document.getElementsByClassName("humidity-percent");
-    // const wind = document.getElementsByClassName("wind-speed");
-    // const temperature = document.getElementsByClassName("weather-temp");
-    // const location = document.getElementsByClassName("weather-location");
-
-    // humidity[0].innerHTML = response.data.main.humidity +" %";
-    // wind[0].innerHTML =Math.floor(response.data.wind.speed) + " km/h";
-    // temperature[0].innerHTML = Math.floor(response.data.main.temp)+"°c" ;
-    // location[0].innerHTML = response.data.name;
+   
     setCity(response.data.name);
     setHumidity(response.data.main.humidity)
     setWind(Math.floor(response.data.wind.speed))
